@@ -1,0 +1,27 @@
+@mixin _960() {
+	margin: 0 auto;
+	width: 960px;
+	
+	@media all and (max-width: 960px) {
+		width: 100%;
+		margin: 0;
+	}
+}
+
+@mixin center-self() {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+@mixin center-children() {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin card-icon($i) {
+	background-image: url('../images/icons-sprite.png');
+	background-position: -(($i - 1) * 40px), 0;
+}

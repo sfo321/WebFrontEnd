@@ -1,0 +1,105 @@
+.main__cards__container {
+    margin: 0 auto;
+    width: 960px;
+}
+
+@media all and (max-width: 1020px) {
+    .main__cards__container {
+        width: 100%;
+        margin: 0;
+    }
+}
+
+.main__gallery__container {
+    min-height: 360px;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 40px;
+}
+
+.main__quote__container,
+.main__quote__container__separator {
+    margin-top: 0;
+    margin-bottom: 0px;
+    border-top: 2px solid #d8d8d8;
+    border-bottom: 2px solid #d8d8d8;
+    width: 100%;
+    background-color: #fcfcfc;
+}
+
+.main__quote__container__separator {
+    height: 71px;
+    margin-bottom: -1px;
+    border: none;
+    background-image: url("../../../images/main-background.png");
+}
+
+.main__container {
+    box-shadow: inset 0px 5px 20px 0px rgba(0, 0, 0, 0.1);
+    background-image: url("../../../images/main-background.png");
+}
+
+.article__header__title {
+    line-height: 150%;
+    font-size: 2.618em;
+    font-family: "Open Sans Condensed";
+    font-weight: normal;
+    font-style: normal;
+}
+
+.quote__body,
+.form__title,
+.form__label,
+.carrousel__title,
+.comment__main__author,
+.page__title {
+    line-height: 150%;
+    font-size: 2.1em;
+    font-family: "Colaborate";
+    font-weight: normal;
+    font-style: thin;
+}
+
+.card__heading,
+.widget__heading,
+.article__footer__info {
+    line-height: 150%;
+    font-size: 1.618em;
+    font-family: "Open Sans Condensed";
+    font-weight: 300;
+    font-style: normal;
+}
+
+.article__header__info,
+.page__info,
+.page__pagination__link {
+    line-height: 150%;
+    font-size: 1.443em;
+    font-family: "Open Sans Condensed";
+    font-weight: 300;
+    font-style: normal;
+}
+
+.card__body,
+.footer__card__body,
+.card__body__list__item,
+.navigation__list__item,
+.card__button,
+.article__main__body,
+.comment__main__body,
+.page__path {
+    line-height: 150%;
+    font-size: .85em;
+    font-family: "Droid Sans";
+    font-weight: normal;
+    font-style: normal;
+}
+
+.widget__body,
+.comment__aside__date {
+    line-height: 150%;
+    font-size: 0.809em;
+    font-family: "Droid Sans";
+    font-weight: 300;
+    font-style: normal;
+}

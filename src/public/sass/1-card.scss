@@ -1,0 +1,33 @@
+%card {
+	height: 300px;
+	@media all and (max-width: 1024px) {
+		margin-bottom: 5%;
+		height: 100%;
+	}
+}
+
+%card__heading {
+	@extend %h5;
+	margin: 65px 0 20px 0;
+}
+
+%card__body {
+	@extend %p;
+	max-width: 250px;
+	line-height: 175%;
+	@media all and (max-width: 768px) {
+		max-width: 100%;
+	}
+}
+
+%card__body__list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+%card__body__list__item {
+	@extend %p;
+	margin-top: -10px;
+	margin-bottom: 20px;
+}

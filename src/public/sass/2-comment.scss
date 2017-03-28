@@ -1,0 +1,91 @@
+@import '3-placeholders/1-p-ui-components/2-read-more-button';
+@import '3-placeholders/2-p-content/1-media-container';
+
+$text-shadow: 1px 2px 2px #ffffff;
+
+.comment {
+	width: 100%;
+	
+	&--reply {
+		margin-left: 85px;
+		width: 540px;
+		
+		
+		
+		@media all and (max-width: 660px) {
+			width: 85%;
+			margin-left: 15%;
+		}
+
+	}
+	
+	&__section {
+		display: flex;
+		flex-direction: row;
+		margin-top: 15px;
+	}
+	
+	&__aside {
+		width: 70px;
+		height: 100%;
+		
+		@media all and (max-width: 360px) {
+			display: none;
+		}
+		
+		&__avatar {
+			width: 55px;
+			height: 55px;
+			
+			&__container {
+				@extend %media__container;
+				width: 68px;
+				height: 68px;
+				box-shadow: 0px 5px 5px -2.5px rgba(0,0,0,0.3);
+			}
+		}
+		
+		&__date {
+			@extend %small;
+			margin-top: 10px;
+			float: right;
+			text-shadow: $text-shadow;
+		}
+	}
+	
+	&__main {
+		height: 100%;
+		width: 540px;
+		min-height: 200px;
+		margin-left: 15px;
+		border: 1px solid #c5c5c5;
+		border-radius: 10px; 
+		background: #ffffff;
+		background: -moz-linear-gradient(top,  #ffffff 0%, #f7f7f7 100%);
+		background: -webkit-linear-gradient(top,  #ffffff 0%,#f7f7f7 100%);
+		background: linear-gradient(to bottom,  #ffffff 0%,#f7f7f7 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f7f7f7',GradientType=0 );
+		
+		@media all and (max-width: 540px) {
+			width: 100%;
+		}
+		
+		&__author {
+			@extend %h4;
+			margin: 30px 30px 20px 20px;
+			color: #1f262d;
+			text-shadow: $text-shadow;
+		}
+		
+		&__body {
+			@extend %p;
+			margin: 0 30px 45px 20px;
+			color: #5e5e5e;
+			text-shadow: $text-shadow;
+			
+			&__button {
+				@extend %read-more-button;
+			}
+		}
+	}
+}

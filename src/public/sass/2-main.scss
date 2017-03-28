@@ -1,0 +1,31 @@
+@import 'mixins';
+@import '3-placeholders/1-p-ui-components/1-card.scss';
+
+.main {
+	
+	&__cards__container {
+		@include _960();
+	}
+		
+	&__gallery__container {
+		min-height: 330px;
+		height: 100%;
+		width: 100%;
+		padding-bottom: 40px;
+	}
+
+		
+	&__jumbotron__container {	
+		margin-top: 55px;
+		margin-bottom: 115px;		
+		border-top: 2px solid #d8d8d8;
+		border-bottom: 2px solid #d8d8d8;
+		width: 100%;
+		background-color: #fcfcfc;	
+	}
+	
+	&__container {
+		box-shadow: inset 0px 5px 20px 0px rgba(0,0,0,0.1);
+		background-image: url('../images/main-background.png');
+	}
+}

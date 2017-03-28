@@ -1,0 +1,10 @@
+@import '0-libs/libs';
+@import '1-typography/typography.sass';
+@import '2-modules/modules';
+
+
+body {
+	@extend %base-font;
+	background-color: #ccc;
+}
+

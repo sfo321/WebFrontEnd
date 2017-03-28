@@ -1,0 +1,90 @@
+@import 'mixins';
+@import '3-placeholders/1-p-ui-components/1-card.scss';
+
+$body-text-shadow:		1px 1px 2px #000000;
+$bullet-text-shadow:	1px 1px 2px #374048;
+
+.card {
+	position: relative;
+	@extend %card;
+	
+	&__heading {
+		@extend %card__heading;
+		&--dark {
+			color: #1f262d;
+		}
+		
+		&--light {
+			color: #ffffff;
+		}
+	}
+	
+	&__body {
+		@extend %card__body;
+		
+		&--dark {
+			color: #838383;
+		}
+		
+		&--light {
+			color: #8b949d
+		}
+		
+		&__list {
+				@extend %card__body__list;
+				&__item {
+					@extend %card__body__list__item;
+					
+					&--light {
+						color: #8b949d;
+						text-shadow: $body-text-shadow;
+						
+						&:before {
+							margin-right: 10px;
+							font-size: 1.5em;
+							content: '• ';
+							color: #171c25;
+							text-shadow: $bullet-text-shadow;
+						}
+					}
+				}
+			}
+	}
+	
+	&__button {
+		@extend %p;
+		float: right;
+		margin-top: 10px;
+		padding: 4.5px 15px;
+		border: 1px solid #ffffff;
+		border-top: none;
+		border-radius: 10px;
+		text-decoration: none;
+		color: #1c2329;
+		background: #fdfdfd;
+		background: -moz-linear-gradient(top,  #fdfdfd 0%, #efefef 100%);
+		background: -webkit-linear-gradient(top,  #fdfdfd 0%,#efefef 100%);
+		background: linear-gradient(to bottom,  #fdfdfd 0%,#efefef 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdfdfd', endColorstr='#efefef',GradientType=0 );
+		
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	
+	&__icon {
+		position: absolute;
+		top: 10px;
+		left: -50px;
+		width: 40px;
+		height: 40px;
+		@for $i from 1 through 3 {
+			&[data-index="#{$i}"] {
+				@include card-icon($i);
+			}
+		}
+		@media all and (max-width: 960px) {
+			display: none;
+		}
+	}
+}

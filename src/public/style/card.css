@@ -1,0 +1,123 @@
+@charset "UTF-8";
+.card {
+    height: 275px;
+    margin-left: 50px;
+}
+
+@media all and (max-width: 1024px) {
+    .card {
+        margin-bottom: 5%;
+        height: 100%;
+    }
+}
+
+.card__heading {
+    font-family: "Colaborate";
+    font-weight: lighter;
+    font-size: 24px;
+}
+
+.card__body {
+    max-width: 250px;
+    line-height: 175%;
+    margin-top: 5px;
+}
+
+@media all and (max-width: 768px) {
+    .card__body {
+        max-width: 100%;
+    }
+}
+
+.card__body__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.card__body__list__item {
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+
+.card {
+    position: relative;
+}
+
+.card__heading--dark {
+    margin: 60px 0 0 0;
+    color: #1f262d;
+}
+
+.card__heading--light {
+    color: #ffffff;
+    margin: 45px 0 0 0;
+}
+
+.card__body--dark {
+    color: #838383;
+}
+
+.card__body--light {
+    color: #8b949d;
+}
+
+.card__body__list__item--light {
+    color: #8b949d;
+    text-shadow: 1px 1px 2px #000000;
+}
+
+.card__body__list__item--light:before {
+    margin-right: 10px;
+    font-size: 1.5em;
+    content: '• ';
+    color: #171c25;
+    text-shadow: 1px 1px 2px #374048;
+}
+
+.card__button {
+    float: right;
+    margin-top: 10px;
+    padding: 4.5px 15px;
+    border: 1px solid #ffffff;
+    border-top: none;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #1c2329;
+    background: #fdfdfd;
+    background: linear-gradient(to bottom, #fdfdfd 0%, #efefef 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#fdfdfd', endColorstr='#efefef', GradientType=0);
+}
+
+.card__button:hover {
+    text-decoration: underline;
+}
+
+.card__icon {
+    position: absolute;
+    top: 5px;
+    left: -50px;
+    width: 40px;
+    height: 40px;
+}
+
+.card__icon[data-index="1"] {
+    background-image: url("../../images/icons-sprite.png");
+    background-position: 0px, 0;
+}
+
+.card__icon[data-index="2"] {
+    background-image: url("../../images/icons-sprite.png");
+    background-position: -40px, 0;
+}
+
+.card__icon[data-index="3"] {
+    background-image: url("../../images/icons-sprite.png");
+    background-position: -80px, 0;
+}
+
+@media all and (max-width: 960px) {
+    .card__icon {
+        display: none;
+    }
+}

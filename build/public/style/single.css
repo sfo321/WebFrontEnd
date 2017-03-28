@@ -1,0 +1,212 @@
+.widget {
+    height: auto;
+    width: 275px;
+    margin-left: 30px;
+}
+
+.widget:first-child {
+    margin-top: 95px;
+}
+
+.widget__body {
+    padding: 10%;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #dadada;
+    background: #ffffff;
+    background: linear-gradient(to bottom, #ffffff 60%, #f7f7f7 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f7f7f7', GradientType=0);
+}
+
+@media all and (max-width: 639px) {
+    .widget,
+    .widget:first-child {
+        margin: 0 10px;
+        max-width: 100%;
+    }
+    .widget__body {
+        padding: 12px;
+    }
+}
+
+.widget__heading {
+    margin: 30px 0 7px 0;
+    font-family: "Colaborate";
+    font-weight: 100;
+    font-style: thin;
+    font-size: 24px;
+}
+
+.widget__heading--first {
+    margin-top: 0;
+}
+
+.widget__body__list {
+    margin: 0;
+    padding-left: 15px;
+}
+
+.form,
+.widget__container {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.widget__container {
+    -webkit-align-items: baseline;
+    -ms-flex-align: baseline;
+    align-items: baseline;
+    width: 100%;
+    margin-bottom: 80px;
+}
+
+.form {
+    font-family: "Colaborate";
+    font-weight: 100;
+    font-style: thin;
+    font-size: 16px;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    min-height: 300px;
+    height: 100%;
+    margin: 15px auto;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #d2d2d2;
+    background: linear-gradient(to right, #11161c 0%, #303841 50%, #11161c 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#11161c', endColorstr='#11161c', GradientType=1);
+}
+
+.widget__body__list__item {
+    min-width: 200px;
+}
+
+@media all and (max-width: 500px) {
+    .form {
+        width: 100%;
+        margin-top: 5px;
+    }
+}
+
+.form__title {
+    margin: 0;
+    padding: 0;
+}
+
+.form__label {
+    text-align: left;
+    display: block;
+    margin: 5px;
+    font-size: 18px;
+    color: #d2d2d2;
+}
+
+.form__input--text,
+.form__input--textarea {
+    display: block;
+    height: 35px;
+    width: 88%;
+    padding-left: 5px;
+    border: 1px solid darkslategrey;
+    margin: 15px 0 15px 10px;
+    background: #d2d2d2;
+    transition: border 0.3s ease-in-out;
+}
+
+.form__input--text:focus,
+.form__input--textarea:focus {
+    box-shadow: 0 0 1em #d2d2d2;
+    outline: none;
+}
+
+.form__input--textarea {
+    height: 125px;
+    resize: none;
+    margin-right: 1%;
+}
+
+#media {
+    margin: 15px 1%;
+}
+
+#media__type {
+    margin-right: 1%;
+}
+
+.form__input--select {
+    display: block;
+    height: 35px;
+    width: 31%;
+    margin: 15px 0 15px 2%;
+    color: #d2d2d2;
+    border: 1px solid darkslategrey;
+    background: transparent;
+    transition: border 0.3s ease-in-out;
+}
+
+.form__input--select:hover,
+.form__input--submit:hover {
+    box-shadow: inset 0 0 1em darkslategrey, 0 0 1em #d2d2d2;
+}
+
+.form__input {
+    border-radius: 4px;
+}
+
+.form__register>.form__input--text {
+    width: 95%;
+}
+
+.form__input--submit {
+    float: right;
+    padding: 10px 20px;
+    margin: 15px;
+    color: #d2d2d2;
+    border: 1px solid #d2d2d2;
+    background: transparent;
+    transition: border 0.3s ease-in-out;
+}
+
+.form__input--submit--alert {
+    float: right;
+    padding: 10px 20px;
+    margin: 15px;
+    color: darkslategrey;
+    border: 1px solid darkslategrey;
+    background: transparent;
+    transition: border 0.3s ease-in-out;
+}
+
+@media all and (max-width: 1020px) {
+    .form__input--text {
+        width: 98%;
+        margin-right: 10px;
+    }
+    .form__input--textarea {
+        width: 98%;
+    }
+}
+
+@media all and (max-width: 650px) {
+    .form__input--text,
+    .form__input--textarea,
+    .form__input--select {
+        width: 100%;
+    }
+}
+
+.alert {
+    box-shadow: 0 0 1em red !important;
+    outline: none;
+}
