@@ -48,7 +48,7 @@ gulp.task('default', () => {
 gulp.task('sass', () => {
     return gulp.src('./sass/**/*.scss')
         .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
-        .pipe(gulp.dest('./dist/public/*.css'));
+        .pipe(gulp.dest('./build/public/styles*.css'));
 });
 
 gulp.task('sass:watch', () => {
@@ -62,7 +62,7 @@ gulp.task('stream', function() {
 
 gulp.task('start', function() {
     nodemon({
-        script: 'app.js',
+        script: './build/app.js',
         ext: 'js html',
         env: { 'NODE_ENV': 'development' }
     })

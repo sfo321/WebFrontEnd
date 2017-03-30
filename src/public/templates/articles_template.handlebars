@@ -6,8 +6,8 @@
         <div class="page__path__gallery">Home >> <span class="page__path--active">Gallery</span></div>
         <div class="main__gallery__container gallery__container">
             <div class="gallery">
-                {{#each pictures}}
-                <div class="gallery__image__container"><img src="{{this}}" class="gallery__image"/>
+                {{#each this}}
+                <div class="gallery__image__container"><img src="{{this.imageUrl}}" class="gallery__image"/>
                     <div class="gallery__image__overlay"></div>
                     <div class="gallery__image__icon__container">
                         <a href="#" class="gallery__image__icon gallery__image__icon--open fi-plus"></a>

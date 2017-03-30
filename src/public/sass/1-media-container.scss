@@ -1,8 +1,0 @@
-@import 'mixins';
-
-%media__container {
-	@include center-children();
-	background-color: #ffffff;
-	border: 1px solid #dadada;
-	border-bottom: 1px solid #b7b7b7;
-}

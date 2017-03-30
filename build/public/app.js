@@ -33,10 +33,6 @@
 
         this.get('#/pics', controllers.gallery.pics);
 
-        // this.get('#/gallery', function(context) {
-        //     context.redirect('#/gallery');
-        // });
-
         this.get('#/gallery', controllers.gallery.gallery);
 
         this.get('#/login', function(context) {

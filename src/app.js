@@ -1,46 +1,30 @@
-(function() {
+'use strict';
 
-    var sammyApp = Sammy('#content', function() {
+const path = require("path"),
+    express = require('express'),
+    session = require('express-session'),
+    morgan = require("morgan"),
+    cookieParser = require('cookie-parser'),
+    app = require("./app/app").getApp(),
+    bodyParser = require('body-parser'),
+    mongoose = require('mongoose'),
+    data = require('./app/data'),
+    { PORT, secret } = require("./app/config");
 
-        this.get('#/', function(context) {
-            context.redirect('#/home');
-        });
+app.use(morgan("combined"));
 
-        this.get('#/home', controllers.home.all);
-        this.get('#/home/add', controllers.home.add);
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieParser());
+app.use(session({ secret: secret }));
 
-        this.get('#/my-cookie', controllers.myCookie.all);
+require('./app/passport/')(app, data);
 
-        this.get('#/register', function(context) {
-            context.redirect('#/sign-up');
-        });
-        this.get('#/users/register', function(context) {
-            context.redirect('#/sign-up');
-        });
-        this.get('#/sign-up', controllers.users.register);
-    });
+app.use(express.static('./build/public'));
 
-    $(function() {
-        sammyApp.run('#/');
-        $('#btn-sign-in').on('click', function(e) {
-            var user = {
-                username: $('#tb-username').val(),
-                password: $('#tb-password').val()
-            };
-            data.users.signIn(user)
-                .then(function(user) {
-                    toastr.success('User signed in!');
-                    document.location = '#/register';
-                    document.location = '#/home';
-                    setTimeout(function() {
-                        $('#container-sign-in').fadeOut(100, function() {
-                            console.log('Here!');
-                            $('#container-sign-out').fadeIn(500);
-                        });
-                    }, 1000);
-                }, function(err) {
-                    toastr.error(err.responseText);
-                });
-        });
-    });
-}());
+app.use("/api/images", require("./app/routers/images_router")(data));
+app.use("/api/users", require("./app/routers/user_router")(data));
+app.use("/api/cards", require("./app/routers/card_router")(data));
+
+app.listen(PORT);
+console.log(`App running on port ${PORT}`);
